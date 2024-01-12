@@ -1,0 +1,5 @@
+go.property("speed", 4)
+
+function init(self)
+	go.animate(".","euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60/self.speed)
+end
