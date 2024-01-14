@@ -41,23 +41,12 @@ function on_input(self, action_id, action)
 
 			local l_DesiredScale=vmath.vector3(1.0,1.0,1.0)
 			go.set_scale(l_DesiredScale,self.collision_id)
+			print("Objeto clicado:")
+			msg.post(self.collision_id, "clicked")
+			
+			
 		end
 
-		if self.pressed and self.collision_id and not self.dragged_id then
-			self.dragged_id=self.collision_id
-			self.dragged_pos=l_ActionPos
-
-			local l_DesiredScale2=vmath.vector3(1.2,1.2,1.0)
-			go.set_scale(l_DesiredScale2)
-		end
-
-		if self.dragged_id and vmath.length(self.dragged_pos-l_ActionPos)>20 then
-			self.dragging=true
-		end
-
-		if self.dragging then
-			go.set_position(l_ActionPos+vmath.vector3(-30,30,-1),self.dragged_id)
-		end
 			
 	end
 end 

@@ -1,0 +1,18 @@
+-- game.lua
+
+GameController = {}
+
+GameController.score = 0
+GameController.ScoreMultiplier=1
+
+
+function GameController.get_score()
+	return GameController.score
+end
+
+function GameController.update_score(amount)
+	GameController.score = GameController.score + amount
+	print(GameController.score)
+end
+
+return GameController
