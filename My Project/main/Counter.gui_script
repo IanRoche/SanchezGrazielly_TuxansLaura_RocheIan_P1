@@ -14,6 +14,7 @@ end
 
 function update(self, dt)
 	if action.pressed then 
+		--Animate FrogJump
 		self.counter_clik+=1
 		
 	-- Add update code here
