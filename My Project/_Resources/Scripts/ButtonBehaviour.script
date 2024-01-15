@@ -4,13 +4,13 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then
-		clicked()
+		ButtonClicked()
 	end
 end
 
-function clicked(self)
+function ButtonClicked(self)
 	-- Lógica específica para cuando el objeto es clicado
-	print("¡Objeto clicado!")
+	print("¡BOTON!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(1*GameController.ScoreMultiplier)
 end

@@ -8,13 +8,13 @@ function init(self)
 	msg.post(".", "acquire_input_focus")  -- Asegúrate de que el objeto puede recibir eventos de entrada
 end
 
-function C.on_message(self, message_id, message, sender)
+function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then
-		self:clicked()
+		clicked()
 	end
 end
 
-function C.clicked(self)
+function clicked(self)
 	-- Lógica específica para cuando el objeto es clicado
 	print("¡Objeto clicado!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
