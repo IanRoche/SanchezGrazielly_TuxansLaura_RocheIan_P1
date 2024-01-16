@@ -42,6 +42,8 @@ function on_input(self, action_id, action)
 			local l_DesiredScale=vmath.vector3(1.0,1.0,1.0)
 			print("Objeto clicado:")
 			msg.post(self.collision_id, "clicked")
+
+			print(self.collision_id)
 		end
 
 			

@@ -1,7 +1,5 @@
 go.property("speed", 4)
 
-local Clicable=require "_Resources.Scripts.Clicable"
-local C=setmetatable({}, {__index=Clicable})
 
 function init(self)
 	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60 / self.speed)
@@ -16,11 +14,9 @@ end
 
 function clicked(self)
 	-- Lógica específica para cuando el objeto es clicado
-	print("¡Objeto clicado!")
+	print("¡moneda!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(1)
 	go.delete()
 	
 end
-
-return C
