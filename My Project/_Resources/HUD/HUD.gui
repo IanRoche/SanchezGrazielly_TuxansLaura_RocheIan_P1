@@ -1,4 +1,4 @@
-script: ""
+script: "/_Resources/Scripts/HUD.gui_script"
 fonts {
   name: "Principal Font"
   font: "/_Resources/HUD/Principal Font.font"
