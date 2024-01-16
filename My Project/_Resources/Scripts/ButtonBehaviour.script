@@ -7,6 +7,9 @@ function on_message(self, message_id, message, sender)
 		ButtonClicked()
 	end
 end
+function update()
+	print(go.get_world_transform(z))
+end
 
 function ButtonClicked(self)
 	-- Lógica específica para cuando el objeto es clicado

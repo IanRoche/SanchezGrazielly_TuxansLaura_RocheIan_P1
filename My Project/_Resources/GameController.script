@@ -1,5 +1,3 @@
--- game.lua
-
 GameController = {}
 
 GameController.score = 0
