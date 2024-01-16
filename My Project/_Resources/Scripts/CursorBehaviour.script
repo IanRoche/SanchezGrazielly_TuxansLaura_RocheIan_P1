@@ -40,9 +40,8 @@ function on_input(self, action_id, action)
 			self.dragging=false
 
 			local l_DesiredScale=vmath.vector3(1.0,1.0,1.0)
-			--go.set_scale(l_DesiredScale,self.collision_id)
-			print("Objeto clicado:")
 			msg.post(self.collision_id, "clicked")
+
 		end
 
 			
