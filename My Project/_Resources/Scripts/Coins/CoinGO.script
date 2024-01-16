@@ -1,26 +1,23 @@
 go.property("speed", 4)
 
-local Clicable=require "_Resources.Scripts.Clicable"
-local C=setmetatable({}, {__index=Clicable})
 
 function init(self)
 	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60 / self.speed)
 	msg.post(".", "acquire_input_focus")  -- Asegúrate de que el objeto puede recibir eventos de entrada
 end
 
-function on_message(self, message_id, message, sender)
-	if message_id == hash("clicked") then
-		clicked()
-	end
-end
-
-function clicked(self)
+local function Clicked()
 	-- Lógica específica para cuando el objeto es clicado
-	print("¡Objeto clicado!")
+	print("¡moneda!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(1)
 	go.delete()
-	
+
 end
 
-return C
+function on_message(self, message_id, message, sender)
+	if message_id == hash("clicked") then
+		Clicked()
+	end
+end
+

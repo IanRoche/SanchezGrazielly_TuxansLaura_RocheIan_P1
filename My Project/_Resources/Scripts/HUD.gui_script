@@ -1,3 +1,4 @@
 function update(self, dt)
+	print("update Hud")
 	gui.set_text(gui.get_node("score_label"), "Puntaje: " .. tostring(GameController.get_score()))
 end
