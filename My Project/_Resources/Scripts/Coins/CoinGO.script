@@ -1,6 +1,6 @@
 go.property("speed", 4)
 
-
+go.property("Value", 1)
 function init(self)
 	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60 / self.speed)
 	msg.post(".", "acquire_input_focus")  -- Asegúrate de que el objeto puede recibir eventos de entrada
