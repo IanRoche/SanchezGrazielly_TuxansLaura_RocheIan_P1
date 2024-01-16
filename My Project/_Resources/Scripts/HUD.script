@@ -1,7 +1,3 @@
-HUD={}
-
-function HUD:update(self, dt)
+function update(self, dt)
 	gui.set_text(gui.get_node("score_label"), "Puntaje: " .. tostring(GameController.get_score()))
 end
-
-return HUD
