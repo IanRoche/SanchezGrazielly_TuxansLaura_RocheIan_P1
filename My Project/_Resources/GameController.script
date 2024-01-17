@@ -11,6 +11,10 @@ end
 function GameController.update_score(amount)
 	GameController.score = GameController.score + amount
 	print(GameController.score)
+	if message_id == hash("Buy") then
+		GameController.score=GameController.score-2
+		self:Buy()
+	end
 end
 
 return GameController
