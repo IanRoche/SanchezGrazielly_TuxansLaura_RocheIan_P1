@@ -5,7 +5,7 @@ end
 local function Clicked(self)
 	print("¡BOTON!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
-	GameController.update_score(1*GameController.ScoreMultiplier)
+	GameController.update_score(1)
 end
 
 function on_message(self, message_id, message, sender)
@@ -15,6 +15,6 @@ function on_message(self, message_id, message, sender)
 end
 
 function update()
-	print(go.get_world_transform(z))
+	
 end
 

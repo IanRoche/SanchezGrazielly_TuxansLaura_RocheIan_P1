@@ -40,8 +40,11 @@ function on_input(self, action_id, action)
 			self.dragging=false
 
 			local l_DesiredScale=vmath.vector3(1.0,1.0,1.0)
-			msg.post(self.collision_id, "clicked")
+			if self.collision_id==nil then
 
+			else	
+				msg.post(self.collision_id, "clicked")
+			end	
 		end
 
 			

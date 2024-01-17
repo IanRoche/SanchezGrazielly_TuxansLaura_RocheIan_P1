@@ -9,8 +9,20 @@ function GameController.get_score()
 end
 
 function GameController.update_score(amount)
-	GameController.score = GameController.score + amount
+	if GameController.score%5==0 then
+		GameController.IncreaseMultiplier(0.5)
+	end
+	if GameController.score>11 then
+		msg.post("CoinGOSpawner#CoinSpawner", "spawnCoin")
+	end
+	GameController.score = GameController.score + amount*GameController.ScoreMultiplier
 	print(GameController.score)
 end
+
+function GameController.IncreaseMultiplier(increase)
+	GameController.ScoreMultiplier=GameController.ScoreMultiplier+increase
+	print("increased to: "..GameController.ScoreMultiplier) 
+end
+
 
 return GameController

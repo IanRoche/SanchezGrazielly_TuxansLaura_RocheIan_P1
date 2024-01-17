@@ -215,7 +215,7 @@ embedded_instances {
 embedded_instances {
   id: "CoinGOSpawner"
   data: "components {\n"
-  "  id: \"CoinSpawner1\"\n"
+  "  id: \"CoinSpawner\"\n"
   "  component: \"/_Resources/Scripts/Coins/CoinSpawner.script\"\n"
   "  position {\n"
   "    x: 0.0\n"

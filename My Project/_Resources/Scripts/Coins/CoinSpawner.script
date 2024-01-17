@@ -1,17 +1,24 @@
+local l_ScreenWidth=tonumber(sys.get_config_number("display.width"))
+local l_ScreenHeight=tonumber(sys.get_config_number("display.height"))
+math.randomseed(os.time())
+local function SpawnCoin(self, Amount)
+	self.id=tostring(i)
+	local l_XPos=math.random(100, l_ScreenWidth-100)
+	local l_YPos=math.random(100, l_ScreenHeight-100)
+	local l_Pos=vmath.vector3(l_XPos, l_YPos, 1)
+
+	factory.create("#factory", l_Pos, nil,{Value=Amount}, 1)
+	print("Spawn coin: ".. self.id.."  X: "..tostring(l_XPos).."  Y: "..tostring(l_YPos))
+end
+
 function init(self)
-	math.randomseed(os.time())
-	local l_ScreenWidth=tonumber(sys.get_config_number("display.width"))
-	local l_ScreenHeight=tonumber(sys.get_config_number("display.height"))
-
 	print("l_ScreenWidth: ".. tostring(l_ScreenWidth).."l_ScreenHeight: ".. tostring(l_ScreenHeight))
-
 	for i=1, 10 do
-		self.id=tostring(i)
-		local l_XPos=math.random(100, l_ScreenWidth-100)
-		local l_YPos=math.random(100, l_ScreenHeight-100)
-		local l_Pos=vmath.vector3(l_XPos, l_YPos, 1)
-
-		factory.create("#factory", l_Pos, nil,{}, 1)
-		print("Spawn coin: ".. self.id.."  X: "..tostring(l_XPos).."  Y: "..tostring(l_YPos))
+		SpawnCoin(self, 5)
+	end
+end
+function on_message(self, message_id, message, sender)
+	if message_id == hash("spawnCoin") then
+		SpawnCoin(self, 3)
 	end
 end
