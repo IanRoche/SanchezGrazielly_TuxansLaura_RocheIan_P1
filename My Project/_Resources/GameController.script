@@ -1,4 +1,4 @@
-GameController = {}
+GameController = {} --estos comentarios son para mi tonto ass ( lo siento, cuando lo tengamos que entregar lo borrare) :3. AQUI HAY UNATABLA
 
 GameController.score = 0
 GameController.ScoreMultiplier=1
