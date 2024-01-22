@@ -9,7 +9,6 @@ end
 
 local function Clicked(self)
 	-- Lógica específica para cuando el objeto es clicado
-	print("¡moneda!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(self.Value)
 	go.delete()

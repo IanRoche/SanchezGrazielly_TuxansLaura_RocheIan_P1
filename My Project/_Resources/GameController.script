@@ -23,6 +23,5 @@ function GameController.update_score(amount) --una funcion que actualiza el punt
 end
 function GameController.IncreaseMultiplier(increase)
 	GameController.ScoreMultiplier=GameController.ScoreMultiplier+increase
-	--print("increased to: "..GameController.ScoreMultiplier) 
 end
 return GameController

@@ -8,11 +8,9 @@ local function SpawnCoin(self, Amount)
 	local l_Pos=vmath.vector3(l_XPos, l_YPos, 1)
 
 	factory.create("#factory", l_Pos, nil,{Value=Amount}, 1)
-	print("Spawn coin: ".. self.id.."  X: "..tostring(l_XPos).."  Y: "..tostring(l_YPos))
 end
 
 function init(self)
-	print("l_ScreenWidth: ".. tostring(l_ScreenWidth).."l_ScreenHeight: ".. tostring(l_ScreenHeight))
 	for i=1, 10 do
 		SpawnCoin(self, 5)
 	end

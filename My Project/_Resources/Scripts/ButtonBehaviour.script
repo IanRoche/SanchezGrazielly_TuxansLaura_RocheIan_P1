@@ -4,17 +4,14 @@ function init(self)
 end
 
 local function CheckIfTimeToSpawn()
-	print(clickCount)
 	if clickCount>=10 then
 		msg.post("CoinGOSpawner#CoinSpawner", "spawnCoin") --Para spawnear cosas copy y paste de esta linea donde quuieras hacerlo
 		clickCount=0
-		print("cheked")
 	end
 	msg.post("Hud#HUD", "Update")
 end
 
 local function Clicked(self)
-	print("¡BOTON!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(1*GameController.ScoreMultiplier)
 	clickCount=clickCount+1
