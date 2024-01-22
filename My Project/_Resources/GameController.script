@@ -1,15 +1,15 @@
 GameController = {} --estos comentarios son para mi tonto ass ( lo siento, cuando lo tengamos que entregar lo borrare) :3. AQUI HAY UNATABLA
 
-GameController.score = 0
-GameController.ScoreMultiplier=1
+GameController.score = 0 --aqui inicializo? 
+GameController.ScoreMultiplier=1 --tmb inicializo 
 
 
-function GameController.get_score()
+function GameController.get_score()--una funcion que simplemente devuelve la score inicializada ya arriba 
 	return GameController.score
-end
+end --literalmente solo hace eso 
 
-function GameController.update_score(amount)
-	GameController.score = GameController.score + amount
+function GameController.update_score(amount) --una funcion que actualiza el puntuaje, y le llega un parametro llamado amount (perdonad los comentarios) 
+	GameController.score = GameController.score + amount --aqui coje la variable de score, y le 
 	print(GameController.score)
 end
 

@@ -15,6 +15,6 @@ function on_message(self, message_id, message, sender)
 end
 
 function update()
-	print(go.get_world_transform(z))
+	--print(go.get_world_transform(z))
 end
 
