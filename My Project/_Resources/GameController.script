@@ -12,11 +12,16 @@ function GameController.update_score(amount)
 	if GameController.score%5==0 then
 		GameController.IncreaseMultiplier(0.5)
 	end
+	
 	if GameController.score>11 then
 		msg.post("CoinGOSpawner#CoinSpawner", "spawnCoin")
 	end
 	GameController.score = GameController.score + amount*GameController.ScoreMultiplier
-	print(GameController.score)
+
+	if message_id == hash("Buy") then
+		GameController.score=GameController.score-2 --hay que restar una variable o un parametro
+		self:Buy()
+	end
 end
 
 function GameController.IncreaseMultiplier(increase)
