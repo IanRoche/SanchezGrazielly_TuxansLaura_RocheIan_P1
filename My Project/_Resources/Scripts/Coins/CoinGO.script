@@ -1,23 +1,24 @@
 go.property("speed", 4)
 
 go.property("Value", 1)
+
 function init(self)
 	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60 / self.speed)
 	msg.post(".", "acquire_input_focus")  -- Asegúrate de que el objeto puede recibir eventos de entrada
 end
 
-local function Clicked()
+local function Clicked(self)
 	-- Lógica específica para cuando el objeto es clicado
 	print("¡moneda!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
-	GameController.update_score(1)
+	GameController.update_score(self.Value)
 	go.delete()
 
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then
-		Clicked()
+		Clicked(self)
 	end
 end
 

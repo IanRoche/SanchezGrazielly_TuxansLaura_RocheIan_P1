@@ -1,0 +1,22 @@
+function init(self)
+	msg.post(".", "acquire_input_focus") 
+end
+
+local function Buy(self)
+	print("¡Objeto Comprado!")
+	-- Agrega la lógica que desees realizar al hacer clic en este objeto
+	GameController.update_score()
+	GameController.update_score(2*GameController.ScoreMultiplier)
+	
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("comprado") then
+		Buy()
+	end
+end
+
+function update()
+	print(go.get_world_transform(z))
+end
+
