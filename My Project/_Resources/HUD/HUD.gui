@@ -77,8 +77,8 @@ nodes {
 }
 nodes {
   position {
-    x: 100.0
-    y: 36.0
+    x: 917.0
+    y: 556.0
     z: 0.0
     w: 1.0
   }
@@ -89,9 +89,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 2.0
-    y: 0.25
-    z: 1.0
+    x: 0.66
+    y: 1.25224
+    z: 0.66
     w: 1.0
   }
   size {
@@ -106,22 +106,20 @@ nodes {
     z: 1.0
     w: 1.0
   }
-  type: TYPE_BOX
+  type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
   texture: ""
-  id: "LevelSlider"
+  id: "pie"
   xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_TOP
-  pivot: PIVOT_W
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
   layer: ""
   inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
+  outerBounds: PIEBOUNDS_ELLIPSE
+  innerRadius: 0.0
+  perimeterVertices: 800
+  pieFillAngle: 360.0
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false

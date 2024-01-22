@@ -1,4 +1,31 @@
-function update(self, dt)
+local totalClicksNeeded = 10 
 
+local function UpdatePie(self)
+	local remainingClicks = totalClicksNeeded - clickCount
+	local percentageRemaining = (remainingClicks / totalClicksNeeded) * 100
+
+	gui.set_fill_angle(gui.get_node("pie"), 360 * (percentageRemaining / 100))
+
+end
+
+local function UpdateThings(self)
+	UpdatePie()
+end
+
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Update") then
+		UpdateThings()
+	end
+end
+
+
+
+function update(self, dt)
 	gui.set_text(gui.get_node("CoinsAmount"), "Puntaje: " .. tostring(GameController.get_score()))
 end
+
+
+
+

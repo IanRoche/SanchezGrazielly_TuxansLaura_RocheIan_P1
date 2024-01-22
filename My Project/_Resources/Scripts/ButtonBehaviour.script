@@ -10,6 +10,7 @@ local function CheckIfTimeToSpawn()
 		clickCount=0
 		print("cheked")
 	end
+	msg.post("Hud#HUD", "Update")
 end
 
 local function Clicked(self)

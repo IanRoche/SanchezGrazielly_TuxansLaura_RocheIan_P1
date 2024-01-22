@@ -10,16 +10,16 @@ end --literalmente solo hace eso
 
 function GameController.update_score(amount) --una funcion que actualiza el puntuaje, y le llega un parametro llamado amount (perdonad los comentarios) 
 	if GameController.score%5==0 then
-		GameController.IncreaseMultiplier(0.5)
+		GameController.IncreaseMultiplier(0.1)
 	end
-
+--
 	GameController.score = GameController.score + amount*GameController.ScoreMultiplier --aqui coje la variable de score, y lo multiplica por el Multiplicador
 
 	if message_id == hash("Buy") then
 		GameController.score=GameController.score-2 --hay que restar una variable o un parametro
 		self:Buy()
 	end
-	
+
 end
 function GameController.IncreaseMultiplier(increase)
 	GameController.ScoreMultiplier=GameController.ScoreMultiplier+increase
