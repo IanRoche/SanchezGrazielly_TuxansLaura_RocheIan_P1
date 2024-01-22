@@ -13,21 +13,16 @@ function GameController.update_score(amount) --una funcion que actualiza el punt
 		GameController.IncreaseMultiplier(0.5)
 	end
 
-	if GameController.score>11 then
-		msg.post("CoinGOSpawner#CoinSpawner", "spawnCoin")
-	end
 	GameController.score = GameController.score + amount*GameController.ScoreMultiplier --aqui coje la variable de score, y lo multiplica por el Multiplicador
 
 	if message_id == hash("Buy") then
 		GameController.score=GameController.score-2 --hay que restar una variable o un parametro
 		self:Buy()
 	end
+	
 end
-
 function GameController.IncreaseMultiplier(increase)
 	GameController.ScoreMultiplier=GameController.ScoreMultiplier+increase
-	print("increased to: "..GameController.ScoreMultiplier) 
+	--print("increased to: "..GameController.ScoreMultiplier) 
 end
-
-
 return GameController

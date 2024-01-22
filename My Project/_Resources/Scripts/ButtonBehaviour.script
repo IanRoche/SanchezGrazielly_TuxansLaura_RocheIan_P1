@@ -1,11 +1,23 @@
 function init(self)
 	msg.post(".", "acquire_input_focus") 
+	clickCount=0
+end
+
+local function CheckIfTimeToSpawn()
+	print(clickCount)
+	if clickCount>=10 then
+		msg.post("CoinGOSpawner#CoinSpawner", "spawnCoin") --Para spawnear cosas copy y paste de esta linea donde quuieras hacerlo
+		clickCount=0
+		print("cheked")
+	end
 end
 
 local function Clicked(self)
 	print("¡BOTON!")
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(1*GameController.ScoreMultiplier)
+	clickCount=clickCount+1
+	CheckIfTimeToSpawn()
 end
 
 function on_message(self, message_id, message, sender)
