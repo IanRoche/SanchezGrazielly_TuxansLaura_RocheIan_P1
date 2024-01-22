@@ -2,18 +2,35 @@ go.property("speed", 4)
 
 go.property("Value", 1)
 
+go.property("Time", 3)
+
 function init(self)
 	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60 / self.speed)
 	msg.post(".", "acquire_input_focus")  -- Asegúrate de que el objeto puede recibir eventos de entrada
+	contador=self.Time
 end
 
 local function Clicked(self)
 	-- Lógica específica para cuando el objeto es clicado
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(self.Value)
-	go.delete()
+	--go.delete()
 
 end
+
+local function Timer (self,dt)
+	contador=contador-dt
+
+	if contador <= 0 then
+		contador= self.Time
+		Clicked(self)
+	end
+end
+
+function update(self, dt)
+	Timer(self,dt)
+end
+
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then

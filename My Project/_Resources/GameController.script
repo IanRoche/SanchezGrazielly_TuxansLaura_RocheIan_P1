@@ -10,7 +10,7 @@ end --literalmente solo hace eso
 
 function GameController.update_score(amount) --una funcion que actualiza el puntuaje, y le llega un parametro llamado amount (perdonad los comentarios) 
 	if GameController.score%5==0 then
-		GameController.IncreaseMultiplier(0.1)
+		GameController.IncreaseMultiplier(0.0)
 	end
 --
 	GameController.score = GameController.score + amount*GameController.ScoreMultiplier --aqui coje la variable de score, y lo multiplica por el Multiplicador

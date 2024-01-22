@@ -1,6 +1,7 @@
 local l_ScreenWidth=tonumber(sys.get_config_number("display.width"))
 local l_ScreenHeight=tonumber(sys.get_config_number("display.height"))
 math.randomseed(os.time())
+
 local function SpawnCoin(self, Amount)
 	self.id=tostring(i)
 	local l_XPos=math.random(100, l_ScreenWidth-100)
@@ -11,12 +12,12 @@ local function SpawnCoin(self, Amount)
 end
 
 function init(self)
-	for i=1, 10 do
-		SpawnCoin(self, 5)
+	for i=1, 0 do
+		SpawnCoin(self, 1)
 	end
 end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("spawnCoin") then
-		SpawnCoin(self, 3)
+		SpawnCoin(self, 1)
 	end
 end
