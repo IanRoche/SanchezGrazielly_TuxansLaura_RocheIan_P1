@@ -1,15 +1,53 @@
-GameController = {} --estos comentarios son para mi tonto ass ( lo siento, cuando lo tengamos que entregar lo borrare) :3. AQUI HAY UNATABLA
+GameController = {}--estos comentarios son para mi tonto ass ( lo siento, cuando lo tengamos que entregar lo borrare) :3. AQUI HAY UNATABLA
 
 GameController.score = 0 --aqui inicializo? 
 GameController.ScoreMultiplier=1 --tmb inicializo 
 
 
-function GameController.get_score()--una funcion que simplemente devuelve la score inicializada ya arriba 
+function GameController.get_score() --una funcion que simplemente devuelve la score inicializada ya arriba 
 	return GameController.score
 end --literalmente solo hace eso 
 
 function GameController.update_score(amount) --una funcion que actualiza el puntuaje, y le llega un parametro llamado amount (perdonad los comentarios) 
-	GameController.score = GameController.score + amount --aqui coje la variable de score, y le 
+	if GameController.score%5==0 then
+		GameController.IncreaseMultiplier(0.5)
+	end
+
+	if GameController.score>11 then
+		msg.post("CoinGOSpawner#CoinSpawner", "spawnCoin")
+	end
+	GameController.score = GameController.score + amount*GameController.ScoreMultiplier --aqui coje la variable de score, y lo multiplica por el Multiplicador
+
+	if message_id == hash("Buy") then
+		GameController.score=GameController.score-2 --hay que restar una variable o un parametro
+		self:Buy()
+	end
+end
+
+function GameController.IncreaseMultiplier(increase)
+	GameController.ScoreMultiplier=GameController.ScoreMultiplier+increase
+	print("increased to: "..GameController.ScoreMultiplier) 
+end
+
+
+return GameController
+
+
+
+
+
+GameController = {} 
+
+GameController.score = 0
+GameController.ScoreMultiplier=1 
+
+
+function GameController.get_score()
+	return GameController.score
+end
+
+function GameController.update_score(amount)
+	GameController.score = GameController.score + amount
 	print(GameController.score)
 end
 
