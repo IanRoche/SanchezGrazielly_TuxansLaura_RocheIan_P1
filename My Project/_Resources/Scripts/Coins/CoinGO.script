@@ -16,6 +16,17 @@ local function Clicked(self)
 	GameController.update_score(self.Value)
 	--go.delete()
 
+	-- Realiza la animación de escala
+	go.animate(".", "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(1.2), go.EASING_INCIRC, 0.2)
+
+	timer.delay(0.2, false, function()
+		-- Restaura la escala original después de que termine la animación
+		go.animate(".", "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(1.0), go.EASING_INCIRC, 0.2)
+	end)
+		
+	
+
+	
 end
 
 local function Timer (self,dt)
@@ -27,10 +38,13 @@ local function Timer (self,dt)
 	end
 end
 
-function update(self, dt)
+local function Update(self, dt)
 	Timer(self,dt)
 end
 
+function update(self,dt)
+Update(self, dt)
+end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then

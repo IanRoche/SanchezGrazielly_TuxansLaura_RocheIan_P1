@@ -23,7 +23,7 @@ end
 
 
 function update(self, dt)
-	gui.set_text(gui.get_node("CoinsAmount"), "Puntaje: " .. tostring(GameController.get_score()))
+	gui.set_text(gui.get_node("CoinsAmount"), "Clicks: " .. tostring(GameController.get_score()))
 end
 
 
