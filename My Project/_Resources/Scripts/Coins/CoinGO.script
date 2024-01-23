@@ -17,6 +17,7 @@ end
 
 -- Función para la animación de clic
 local function Clicked(self)
+	
 	-- Lógica específica al hacer clic en el objeto
 	GameController.update_score(self.Value)
 
@@ -30,6 +31,7 @@ local function Clicked(self)
 	timer.delay(0.2, false, function()
 		go.animate(".", "scale", go.PLAYBACK_ONCE_FORWARD, original_scale, go.EASING_INCIRC, 0.2)
 	end)
+	
 end
 
 -- Función para el temporizador
@@ -56,5 +58,6 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then
 		Clicked(self)
+		
 	end
 end

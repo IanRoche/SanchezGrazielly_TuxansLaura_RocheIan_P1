@@ -13,5 +13,6 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("spawnCoin") then
 		SpawnCoin(self, 1)
+		sound.play("#coin_sound")
 	end
 end

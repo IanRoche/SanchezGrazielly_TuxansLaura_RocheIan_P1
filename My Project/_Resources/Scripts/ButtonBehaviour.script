@@ -15,6 +15,7 @@ local function Clicked(self)
 	-- Agrega la lógica que desees realizar al hacer clic en este objeto
 	GameController.update_score(1*GameController.ScoreMultiplier)
 	clickCount=clickCount+1
+	sound.play("#frog_sound")
 	CheckIfTimeToSpawn()
 end
 

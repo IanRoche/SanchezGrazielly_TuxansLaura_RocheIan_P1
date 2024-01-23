@@ -30,6 +30,10 @@ images {
   image: "/_Resources/Images/Nenufar.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/_Resources/Images/Background/Background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "FrogIdle"
   images {
