@@ -19,4 +19,3 @@ end
 function update()
 	print(go.get_world_transform(z))
 end
-
