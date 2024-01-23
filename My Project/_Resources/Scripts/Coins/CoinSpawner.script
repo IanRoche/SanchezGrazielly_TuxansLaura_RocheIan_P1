@@ -10,12 +10,6 @@ local function SpawnCoin(self, Amount)
 
 	factory.create("#factory", l_Pos, nil,{Value=Amount}, 1)
 end
-
-function init(self)
-	for i=1, 0 do
-		SpawnCoin(self, 1)
-	end
-end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("spawnCoin") then
 		SpawnCoin(self, 1)

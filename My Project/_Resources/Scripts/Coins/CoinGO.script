@@ -1,54 +1,60 @@
+-- Define propiedades del script
 go.property("speed", 4)
-
 go.property("Value", 1)
-
 go.property("Time", 3)
 
+-- Inicializa el objeto
 function init(self)
+	-- Animación de rotación
 	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 60 / self.speed)
-	msg.post(".", "acquire_input_focus")  -- Asegúrate de que el objeto puede recibir eventos de entrada
-	contador=self.Time
+
+	-- Configura el contador
+	self.contador = self.Time
+
+	-- Asegúrate de que el objeto pueda recibir eventos de entrada
+	msg.post(".", "acquire_input_focus")
 end
 
+-- Función para la animación de clic
 local function Clicked(self)
-	-- Lógica específica para cuando el objeto es clicado
-	-- Agrega la lógica que desees realizar al hacer clic en este objeto
+	-- Lógica específica al hacer clic en el objeto
 	GameController.update_score(self.Value)
-	--go.delete()
 
-	-- Realiza la animación de escala
+	-- Guarda la escala original antes de la animación
+	local original_scale = go.get(".", "scale")
+
+	-- Animación de escala al hacer clic
 	go.animate(".", "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(1.2), go.EASING_INCIRC, 0.2)
 
+	-- Restaura la escala original después de la animación
 	timer.delay(0.2, false, function()
-		-- Restaura la escala original después de que termine la animación
-		go.animate(".", "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(1.0), go.EASING_INCIRC, 0.2)
+		go.animate(".", "scale", go.PLAYBACK_ONCE_FORWARD, original_scale, go.EASING_INCIRC, 0.2)
 	end)
-		
-	
-
-	
 end
 
-local function Timer (self,dt)
-	contador=contador-dt
+-- Función para el temporizador
+local function Timer(self, dt)
+	self.contador = self.contador - dt
 
-	if contador <= 0 then
-		contador= self.Time
+	if self.contador <= 0 then
+		self.contador = self.Time
 		Clicked(self)
 	end
 end
 
+-- Función de actualización
 local function Update(self, dt)
-	Timer(self,dt)
+	Timer(self, dt)
 end
 
-function update(self,dt)
-Update(self, dt)
+-- Llama a la función de actualización desde la función update
+function update(self, dt)
+	Update(self, dt)
 end
 
+-- Maneja los mensajes
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then
 		Clicked(self)
 	end
 end
-

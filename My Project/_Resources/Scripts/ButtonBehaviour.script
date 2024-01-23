@@ -23,8 +23,3 @@ function on_message(self, message_id, message, sender)
 		Clicked()
 	end
 end
-
-function update()
-	--print(go.get_world_transform(z))
-end
-
