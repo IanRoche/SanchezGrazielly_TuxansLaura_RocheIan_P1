@@ -134,7 +134,11 @@ animations {
     image: "/_Resources/Images/Frog/Frog_Tongue/FrogTongue_5.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
-  playback: PLAYBACK_LOOP_FORWARD
+  images {
+    image: "/_Resources/Images/Frog/Frog_Tongue/FrogTongue_0.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_ONCE_FORWARD
   fps: 12
   flip_horizontal: 0
   flip_vertical: 0

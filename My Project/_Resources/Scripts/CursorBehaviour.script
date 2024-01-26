@@ -34,10 +34,11 @@ function on_input(self, action_id, action)
 			self.dragged_id=nil
 			self.dragging=false
 			local l_DesiredScale=vmath.vector3(1.0,1.0,1.0)
+			sprite.play_flipbook("/Button#frogIdle", "FrogTongue")
 			if self.collision_id==nil then
 			else	
-				msg.post(self.collision_id, "clicked")
+				msg.post(self.collision_id, "clicked")				
 			end	
-		end
+		end		
 	end
 end 

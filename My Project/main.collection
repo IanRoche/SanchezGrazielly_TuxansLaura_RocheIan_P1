@@ -145,7 +145,7 @@ embedded_instances {
   "  }\n"
   "}\n"
   "embedded_components {\n"
-  "  id: \"sprite\"\n"
+  "  id: \"frogIdle\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/PrimerSPRITE.atlas\\\"\\n"
   "default_animation: \\\"FrogIdle\\\"\\n"

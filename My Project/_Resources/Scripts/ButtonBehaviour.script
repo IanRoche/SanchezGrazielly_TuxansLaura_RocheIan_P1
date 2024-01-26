@@ -1,6 +1,8 @@
 function init(self)
 	msg.post(".", "acquire_input_focus") 
 	clickCount=0
+	
+	
 end
 
 local function CheckIfTimeToSpawn()
@@ -16,11 +18,16 @@ local function Clicked(self)
 	GameController.update_score(1*GameController.ScoreMultiplier)
 	clickCount=clickCount+1
 	sound.play("#frog_sound")
+	
+	
 	CheckIfTimeToSpawn()
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("clicked") then
 		Clicked()
+	
+		
 	end
+
 end
